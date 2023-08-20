@@ -10,4 +10,10 @@ services:
     volumes:
       - /home/ec2-user/mygit/csvserver/solution/inputFile:/csvserver/inputdata
 
-
+  prometheus:
+    container_name: prometheus_ctnr
+    image: prom/prometheus:v2.22.0
+    ports:
+      - "9090:9090"
+    volumes:
+      - /home/ec2-user/mygit/csvserver/prometheus:/etc/prometheus
